@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/estilos.css">
 
-    <!--Linkando arquivo html com o JS-->
+    <!-- A tag script deve ser sempre a ultima do arquivo HTML para que o arquivo JS consiga
+        acessar as todos os elementos da página.
+        No local em que está, o arquivo JS só consegue acessar os elementos de head
     <script src="main.js"></script>
+    -->
 
 </head>
 <body>
@@ -24,10 +27,7 @@
     <h1>Alura Midi</h1>
 
     <section class="teclado">
-        <!-- Adicionando comando JS -->
-        <!--onclick() executa uma ação ao clicar no botão.
-        alert('') abre uma mensagem de alerta para o usuário-->
-        <button onclick="alert('Pom')" class="tecla tecla_pom">Pom</button>
+        <button class="tecla tecla_pom">Pom</button>
         <button class="tecla tecla_clap">Clap</button>
         <button class="tecla tecla_tim">Tim</button>
 
@@ -40,8 +40,6 @@
         <button class="tecla tecla_tom">Tom</button>
     </section>
 
-    <!--Tags audio são responsáveis por carregar os audios e reproduzir no navegador-->
-    <!-- Devemos inserir a tag controls "<audio controls.." para mostrar no navegador (Podem ter um layout diferente entre navegadores)-->
     <audio  src="sounds/keyq.wav" id="som_tecla_pom"></audio>
     <audio  src="sounds/keyw.wav" id="som_tecla_clap"></audio>
     <audio  src="sounds/keye.wav" id="som_tecla_tim"></audio>
@@ -52,15 +50,7 @@
     <audio  src="sounds/keyx.wav" id="som_tecla_tic"></audio>
     <audio  src="sounds/keyc.wav" id="som_tecla_tom"></audio>
 
+    <!--Realocando tag script-->
+    <script src="main.js"></script>
 </body>
 </html>
-
-<!--
-    Fizemos a implementação do JS na linha: 
-    <button onclick="alert('Pom')" class="tecla tecla_pom">Pom</button>
-
-    No entanto, isso não é uma boa prática pois a medida que o projeto cresce, vai se
-    tornando mais dificil. O JS é responavel por adicionar o dinamismo e a logica na pagina.
-
-    Criaremos um arquivo JS para realizar funções no html
--->
